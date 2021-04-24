@@ -16,6 +16,7 @@ node {
         sh 'ls -ltr'
         println('------------')
         print(buildInfo)
+        print(buildInfo.inspect())
         println('-------------')
         if (buildInfo.getArtifacts().size() > 0) {
             def localPath = buildInfo.getArtifacts()[0].getLocalPath()
