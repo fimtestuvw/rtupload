@@ -3,7 +3,8 @@
         {
           "pattern": "resources/*.txt",
           "target": "rtupload-key/",
-          "regexp": "false"
+          "regexp": "false",
+          "flatten" : "false"
         }
     ]
 }
