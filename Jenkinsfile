@@ -4,7 +4,7 @@ node {
       // Clones the repository from the current branch name
         def repoUrl= 'https://github.com/fimtestuvw/rtupload'
         def branchName = 'main'
-        git branch: branchName, credentialsId: 	gitCredentials, url: repoUrl
+        git branch: branchName,  url: repoUrl
 
 
     }
