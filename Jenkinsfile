@@ -13,6 +13,7 @@ node {
         def server = Artifactory.server 'auditsg'
         def uploadSpec = readFile 'uploadSpec.json'
         def buildInfo = server.upload spec: uploadSpec
+        sh 'ls -ltr'
 
         if (buildInfo.getArtifacts().size() > 0) {
             def localPath = buildInfo.getArtifacts()[0].getLocalPath()
