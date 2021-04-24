@@ -16,7 +16,6 @@ node {
         sh 'ls -ltr'
         println('------------')
         print(buildInfo)
-        print(buildInfo.inspect())
         println('-------------')
         def count = 0
         for (int i = 0 ; i < buildInfo.getArtifacts().size() ; i++) {
