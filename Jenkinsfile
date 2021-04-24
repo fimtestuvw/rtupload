@@ -18,17 +18,18 @@ node {
         print(buildInfo)
         print(buildInfo.inspect())
         println('-------------')
-        if (buildInfo.getArtifacts().size() > 0) {
-            def localPath = buildInfo.getArtifacts()[0].getLocalPath()
+        def count = 0
+        for (int i = 0 ; i < buildInfo.getArtifacts().size() ; i++) {
+            def localPath = buildInfo.getArtifacts()[i].getLocalPath()
             println(localPath)
-            def remotePath = buildInfo.getArtifacts()[0].getRemotePath()
+            def remotePath = buildInfo.getArtifacts()[i].getRemotePath()
             println(remotePath)
-            def md5 = buildInfo.getArtifacts()[0].getMd5()
+            def md5 = buildInfo.getArtifacts()[i].getMd5()
             println(md5)
-            def sha1 = buildInfo.getArtifacts()[0].getSha1()
+            def sha1 = buildInfo.getArtifacts()[i].getSha1()
             println(sha1)
             print('+++++++++++++++++++')
-            echo remotePath
+            // echo remotePath
         }
 
         // server.publishBuildInfo buildInfo
