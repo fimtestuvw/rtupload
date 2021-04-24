@@ -4,7 +4,7 @@
           "pattern": "resources/*.txt",
           "target": "rtupload-key/",
           "regexp": "false",
-          "flatten" : "false"
+          "flat" : "false"
         }
     ]
 }
