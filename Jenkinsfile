@@ -30,6 +30,6 @@ node {
             echo remotePath
         }
 
-        server.publishBuildInfo buildInfo
+        // server.publishBuildInfo buildInfo
     }
 }
