@@ -33,4 +33,29 @@ node {
 
         server.publishBuildInfo buildInfo
     }
+
+
+
+    stage('Download from Jfrog'){
+        def server = Artifactory.server 'auditsg'
+        def uploadSpec = readFile 'uploadSpec.json'
+        sh 'mkdir downloads'
+        dir('downloads'){
+            def buildInfo = server.download spec: uploadSpec
+
+            for (int i = 0 ; i < buildInfo.getArtifacts().size() ; i++) {
+                def localPath = buildInfo.getArtifacts()[i].getLocalPath()
+                println(localPath)
+                def remotePath = buildInfo.getArtifacts()[i].getRemotePath()
+                println(remotePath)
+                def md5 = buildInfo.getArtifacts()[i].getMd5()
+                println(md5)
+                def sha1 = buildInfo.getArtifacts()[i].getSha1()
+                println(sha1)
+                print('+++++++++++++++++++')
+                // echo remotePath
+            }
+        }
+
+    }
 }
