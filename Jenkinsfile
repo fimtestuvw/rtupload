@@ -17,7 +17,7 @@ node {
         println('------------')
         print(buildInfo)
         println('-------------')
-        def count = 0
+
         for (int i = 0 ; i < buildInfo.getArtifacts().size() ; i++) {
             def localPath = buildInfo.getArtifacts()[i].getLocalPath()
             println(localPath)
@@ -31,6 +31,6 @@ node {
             // echo remotePath
         }
 
-        // server.publishBuildInfo buildInfo
+        server.publishBuildInfo buildInfo
     }
 }
