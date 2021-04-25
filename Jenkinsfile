@@ -42,6 +42,8 @@ node {
         def downloadSpec = readFile 'downloadSpec.json'
         sh 'mkdir downloads'
         dir('downloads'){
+            sh 'pwd'
+            sh 'hostname'
             def buildInfo = server.download spec: downloadSpec
 
             for (int i = 0 ; i < buildInfo.getArtifacts().size() ; i++) {
