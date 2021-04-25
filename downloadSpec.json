@@ -2,7 +2,8 @@
     "files": [
         {
           "pattern": "rtupload-key/resources/*.txt",
-          "regexp": "false"
+          "regexp": "false",
+          "target" : "/tmp/"
         }
     ]
 }
