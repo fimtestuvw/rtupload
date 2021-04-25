@@ -37,7 +37,7 @@ node {
 
 
 
-    stage('Download from Jfrog lah'){
+    stage('Download from Jfrog'){
         def server = Artifactory.server 'auditsg'
         def downloadSpec = readFile 'downloadSpec.json'
         sh 'mkdir downloads'
