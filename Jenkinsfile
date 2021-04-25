@@ -58,6 +58,7 @@ node {
                 print('+++++++++++++++++++')
                 // echo remotePath
             }
+            currentBuild.description = "Jfrog"
         }
 
     }
