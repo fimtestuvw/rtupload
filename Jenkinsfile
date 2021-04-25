@@ -2,6 +2,7 @@ node {
 
     stage('Clone') {
       // Clones the repository from the current branch name
+        cleanWs()
         def repoUrl= 'https://github.com/fimtestuvw/rtupload'
         def branchName = 'main'
         git branch: branchName,  url: repoUrl
