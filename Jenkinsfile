@@ -38,10 +38,10 @@ node {
 
     stage('Download from Jfrog'){
         def server = Artifactory.server 'auditsg'
-        def uploadSpec = readFile 'uploadSpec.json'
+        def downloadSpec = readFile 'downloadSpec.json'
         sh 'mkdir downloads'
         dir('downloads'){
-            def buildInfo = server.download spec: uploadSpec
+            def buildInfo = server.download spec: downloadSpec
 
             for (int i = 0 ; i < buildInfo.getArtifacts().size() ; i++) {
                 def localPath = buildInfo.getArtifacts()[i].getLocalPath()
